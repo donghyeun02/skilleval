@@ -1,5 +1,7 @@
 # skilleval
 
+[![ci](https://github.com/donghyeun02/skilleval/actions/workflows/ci.yml/badge.svg)](https://github.com/donghyeun02/skilleval/actions/workflows/ci.yml)
+
 에이전트 스킬을 고쳤을 때 **나빠지지 않았는지**를 사람 눈 대신 코드로 확인하는 CLI입니다.
 
 ## 왜 만들었나
