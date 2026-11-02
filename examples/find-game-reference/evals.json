@@ -1,0 +1,182 @@
+{
+  "skill_name": "find-game-reference",
+  "evals": [
+    {
+      "id": 0,
+      "prompt": "캔디크러쉬 같은 매치3 퍼즐 게임 만들려고 하는데 어떤 게임을 레퍼런스로 삼아야 할까? 나는 모바일 캐주얼 타겟이고 data.ai 접근은 없어.",
+      "expected_output": "매치3 세부 장르 레퍼런스 게임 표, 핵심 메카닉 분석, 차별화 기회 포인트, data.ai 확인 체크리스트 제공",
+      "files": [],
+      "assertions": [
+        {
+          "type": "heading",
+          "pattern": "추천 레퍼런스",
+          "name": "'추천 레퍼런스 게임' 섹션"
+        },
+        {
+          "type": "min-table-rows",
+          "count": 3,
+          "name": "레퍼런스 게임 표 3행 이상"
+        },
+        {
+          "type": "regex",
+          "pattern": "D\\+?1",
+          "name": "D+1 리텐션 언급"
+        },
+        {
+          "type": "regex",
+          "pattern": "D\\+?7",
+          "name": "D+7 리텐션 언급"
+        },
+        {
+          "type": "regex",
+          "pattern": "스테디셀러",
+          "name": "스테디셀러 분류"
+        },
+        {
+          "type": "heading",
+          "pattern": "배울 점",
+          "name": "'배울 점' 섹션"
+        },
+        {
+          "type": "heading",
+          "pattern": "차별화",
+          "name": "'차별화 기회' 섹션"
+        },
+        {
+          "type": "regex",
+          "pattern": "^\\s*- \\[ \\]",
+          "flags": "m",
+          "name": "data.ai 확인 체크리스트"
+        },
+        {
+          "type": "regex",
+          "pattern": "https?://",
+          "name": "출처 링크"
+        },
+        {
+          "type": "contains",
+          "value": "추정",
+          "name": "추정치임을 명시"
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "prompt": "Zhed랑 비슷한 미니멀 로직 퍼즐 게임을 만들고 싶어. 시장에서 잘 되고 있는 비슷한 게임들이 뭐가 있는지 레퍼런스 분석해줘.",
+      "expected_output": "로직/퍼즐 세부 장르 레퍼런스 게임 표, 미니멀 퍼즐 장르 시장 현황, 차별화 방향 제시",
+      "files": [],
+      "assertions": [
+        {
+          "type": "heading",
+          "pattern": "추천 레퍼런스",
+          "name": "'추천 레퍼런스 게임' 섹션"
+        },
+        {
+          "type": "min-table-rows",
+          "count": 3,
+          "name": "레퍼런스 게임 표 3행 이상"
+        },
+        {
+          "type": "regex",
+          "pattern": "D\\+?1",
+          "name": "D+1 리텐션 언급"
+        },
+        {
+          "type": "regex",
+          "pattern": "D\\+?7",
+          "name": "D+7 리텐션 언급"
+        },
+        {
+          "type": "regex",
+          "pattern": "스테디셀러",
+          "name": "스테디셀러 분류"
+        },
+        {
+          "type": "heading",
+          "pattern": "배울 점",
+          "name": "'배울 점' 섹션"
+        },
+        {
+          "type": "heading",
+          "pattern": "차별화",
+          "name": "'차별화 기회' 섹션"
+        },
+        {
+          "type": "regex",
+          "pattern": "^\\s*- \\[ \\]",
+          "flags": "m",
+          "name": "data.ai 확인 체크리스트"
+        },
+        {
+          "type": "regex",
+          "pattern": "https?://",
+          "name": "출처 링크"
+        },
+        {
+          "type": "contains",
+          "value": "추정",
+          "name": "추정치임을 명시"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "합성 게임이나 아이들 게임 쪽으로 기획 중인데 글로벌 시장에서 지금 잘 되고 있는 게임이 뭔지 알고 싶어. 레퍼런스 좀 찾아줘.",
+      "expected_output": "아이들/합성 세부 장르 분류, 스테디셀러 vs 신규 진입 게임 구분, 리텐션 기준값 제시, 레퍼런스 게임 추천",
+      "files": [],
+      "assertions": [
+        {
+          "type": "heading",
+          "pattern": "추천 레퍼런스",
+          "name": "'추천 레퍼런스 게임' 섹션"
+        },
+        {
+          "type": "min-table-rows",
+          "count": 3,
+          "name": "레퍼런스 게임 표 3행 이상"
+        },
+        {
+          "type": "regex",
+          "pattern": "D\\+?1",
+          "name": "D+1 리텐션 언급"
+        },
+        {
+          "type": "regex",
+          "pattern": "D\\+?7",
+          "name": "D+7 리텐션 언급"
+        },
+        {
+          "type": "regex",
+          "pattern": "스테디셀러",
+          "name": "스테디셀러 분류"
+        },
+        {
+          "type": "heading",
+          "pattern": "배울 점",
+          "name": "'배울 점' 섹션"
+        },
+        {
+          "type": "heading",
+          "pattern": "차별화",
+          "name": "'차별화 기회' 섹션"
+        },
+        {
+          "type": "regex",
+          "pattern": "^\\s*- \\[ \\]",
+          "flags": "m",
+          "name": "data.ai 확인 체크리스트"
+        },
+        {
+          "type": "regex",
+          "pattern": "https?://",
+          "name": "출처 링크"
+        },
+        {
+          "type": "contains",
+          "value": "추정",
+          "name": "추정치임을 명시"
+        }
+      ]
+    }
+  ]
+}

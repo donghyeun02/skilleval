@@ -1,0 +1,58 @@
+{
+  "name": "skilleval",
+  "version": "0.1.0",
+  "description": "Grade agent skill outputs with deterministic assertions and fail CI when a skill regresses.",
+  "keywords": [
+    "llm",
+    "eval",
+    "agent-skills",
+    "claude-code",
+    "cli"
+  ],
+  "author": "donghyeun02",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/donghyeun02/skilleval.git"
+  },
+  "homepage": "https://github.com/donghyeun02/skilleval#readme",
+  "bugs": {
+    "url": "https://github.com/donghyeun02/skilleval/issues"
+  },
+  "type": "module",
+  "sideEffects": false,
+  "bin": {
+    "skilleval": "./dist/bin.js"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint .",
+    "test": "vitest run",
+    "check": "npm run lint && npm run typecheck && npm run test:coverage && npm run build",
+    "example": "node dist/bin.js grade --evals examples/find-game-reference/evals.json --fixtures examples/find-game-reference/iteration-1",
+    "prepack": "npm run build",
+    "test:coverage": "vitest run --coverage"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@types/node": "^22.20.5",
+    "@vitest/coverage-v8": "^5.0.5",
+    "eslint": "^10.14.0",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.72.1",
+    "vitest": "^5.0.5"
+  }
+}

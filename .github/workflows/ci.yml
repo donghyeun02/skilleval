@@ -1,0 +1,48 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    strategy:
+      matrix:
+        node: [22, 24]
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: ${{ matrix.node }}
+          cache: npm
+      - run: npm ci
+      - run: npm audit --audit-level=high
+      - run: npm run check # lint → typecheck → test + coverage → build
+
+      # Dogfood: the bundled example must keep grading and must not regress.
+      - name: grade example against its baseline
+        run: >-
+          node dist/bin.js grade
+          --evals examples/find-game-reference/evals.json
+          --fixtures examples/find-game-reference/iteration-1
+          --baseline examples/find-game-reference/baseline.json
+
+      # Catch files/exports/bin/shebang mistakes that unit tests cannot see.
+      - name: install the packed tarball and run it
+        run: |
+          npm pack --pack-destination "$RUNNER_TEMP"
+          mkdir "$RUNNER_TEMP/consumer" && cd "$RUNNER_TEMP/consumer"
+          npm init -y >/dev/null
+          npm install "$RUNNER_TEMP"/skilleval-*.tgz
+          npx skilleval --help
+          node --input-type=module -e "import { evaluateSuite } from 'skilleval'; if (typeof evaluateSuite !== 'function') process.exit(1);"

@@ -1,0 +1,389 @@
+{
+  "schemaVersion": 1,
+  "skillName": "find-game-reference",
+  "generatedAt": "2026-11-02T06:44:15.487Z",
+  "evals": [
+    {
+      "id": 0,
+      "prompt": "캔디크러쉬 같은 매치3 퍼즐 게임 만들려고 하는데 어떤 게임을 레퍼런스로 삼아야 할까? 나는 모바일 캐주얼 타겟이고 data.ai 접근은 없어.",
+      "variants": [
+        {
+          "variant": "with_skill",
+          "source": "eval-0-match3/with_skill/outputs",
+          "assertions": [
+            {
+              "name": "'추천 레퍼런스 게임' 섹션",
+              "passed": true,
+              "evidence": "line 64: ## 추천 레퍼런스 게임"
+            },
+            {
+              "name": "레퍼런스 게임 표 3행 이상",
+              "passed": true,
+              "evidence": "largest table has 6 data rows (6 tables)"
+            },
+            {
+              "name": "D+1 리텐션 언급",
+              "passed": true,
+              "evidence": "line 49: | D+1 리텐션 | ~35~40% | ~50% | 60%+ |"
+            },
+            {
+              "name": "D+7 리텐션 언급",
+              "passed": true,
+              "evidence": "line 50: | D+7 리텐션 | ~10~12% | ~15% | 20%+ |"
+            },
+            {
+              "name": "스테디셀러 분류",
+              "passed": true,
+              "evidence": "line 16: 매치3는 모바일 캐주얼 장르 중 가장 오래 검증된 카테고리다. 미국 iOS 퍼즐 매출 Top 50 내 매치3…"
+            },
+            {
+              "name": "'배울 점' 섹션",
+              "passed": true,
+              "evidence": "line 78: ### 배울 점"
+            },
+            {
+              "name": "'차별화 기회' 섹션",
+              "passed": true,
+              "evidence": "line 97: ### 차별화 기회"
+            },
+            {
+              "name": "data.ai 확인 체크리스트",
+              "passed": true,
+              "evidence": "line 122: "
+            },
+            {
+              "name": "출처 링크",
+              "passed": false,
+              "evidence": "no match"
+            },
+            {
+              "name": "추정치임을 명시",
+              "passed": true,
+              "evidence": "line 24: | 게임명 | 출시 | 미국 매출 순위 (추정) | 수익화 방식 | 핵심 메카닉 |"
+            }
+          ],
+          "passed": 9,
+          "total": 10
+        },
+        {
+          "variant": "without_skill",
+          "source": "eval-0-match3/without_skill/outputs",
+          "assertions": [
+            {
+              "name": "'추천 레퍼런스 게임' 섹션",
+              "passed": false,
+              "evidence": "no matching heading"
+            },
+            {
+              "name": "레퍼런스 게임 표 3행 이상",
+              "passed": true,
+              "evidence": "largest table has 4 data rows (1 tables)"
+            },
+            {
+              "name": "D+1 리텐션 언급",
+              "passed": false,
+              "evidence": "no match"
+            },
+            {
+              "name": "D+7 리텐션 언급",
+              "passed": false,
+              "evidence": "no match"
+            },
+            {
+              "name": "스테디셀러 분류",
+              "passed": false,
+              "evidence": "no match"
+            },
+            {
+              "name": "'배울 점' 섹션",
+              "passed": false,
+              "evidence": "no matching heading"
+            },
+            {
+              "name": "'차별화 기회' 섹션",
+              "passed": false,
+              "evidence": "no matching heading"
+            },
+            {
+              "name": "data.ai 확인 체크리스트",
+              "passed": false,
+              "evidence": "no match"
+            },
+            {
+              "name": "출처 링크",
+              "passed": false,
+              "evidence": "no match"
+            },
+            {
+              "name": "추정치임을 명시",
+              "passed": false,
+              "evidence": "not found"
+            }
+          ],
+          "passed": 1,
+          "total": 10
+        }
+      ],
+      "ungradedExpectations": []
+    },
+    {
+      "id": 1,
+      "prompt": "Zhed랑 비슷한 미니멀 로직 퍼즐 게임을 만들고 싶어. 시장에서 잘 되고 있는 비슷한 게임들이 뭐가 있는지 레퍼런스 분석해줘.",
+      "variants": [
+        {
+          "variant": "with_skill",
+          "source": "eval-1-logic-puzzle/with_skill/outputs",
+          "assertions": [
+            {
+              "name": "'추천 레퍼런스 게임' 섹션",
+              "passed": true,
+              "evidence": "line 75: ## 추천 레퍼런스 게임 종합표"
+            },
+            {
+              "name": "레퍼런스 게임 표 3행 이상",
+              "passed": true,
+              "evidence": "largest table has 7 data rows (6 tables)"
+            },
+            {
+              "name": "D+1 리텐션 언급",
+              "passed": true,
+              "evidence": "line 67: | D+1 리텐션 | 26~28% | 30~35% | **35~50%** (추정)* |"
+            },
+            {
+              "name": "D+7 리텐션 언급",
+              "passed": true,
+              "evidence": "line 68: | D+7 리텐션 | 3~4% | 7~8% | **10~20%** (추정)* |"
+            },
+            {
+              "name": "스테디셀러 분류",
+              "passed": true,
+              "evidence": "line 41: ### 스테디셀러 (2년 이상 시장 검증)"
+            },
+            {
+              "name": "'배울 점' 섹션",
+              "passed": true,
+              "evidence": "line 93: ### Flow Free에서 배울 점"
+            },
+            {
+              "name": "'차별화 기회' 섹션",
+              "passed": true,
+              "evidence": "line 109: ## 차별화 기회 (시장의 빈틈)"
+            },
+            {
+              "name": "data.ai 확인 체크리스트",
+              "passed": true,
+              "evidence": "line 130: "
+            },
+            {
+              "name": "출처 링크",
+              "passed": true,
+              "evidence": "line 158: - [Puzzle Games Revenue and Usage Statistics (2026) - Busine…"
+            },
+            {
+              "name": "추정치임을 명시",
+              "passed": true,
+              "evidence": "line 43: | 게임명 | 세부 장르 | 미국 매출 추정 순위 | 핵심 메카닉 | 수익화 방식 | 특이점 |"
+            }
+          ],
+          "passed": 10,
+          "total": 10
+        },
+        {
+          "variant": "without_skill",
+          "source": "eval-1-logic-puzzle/without_skill/outputs",
+          "assertions": [
+            {
+              "name": "'추천 레퍼런스 게임' 섹션",
+              "passed": false,
+              "evidence": "no matching heading"
+            },
+            {
+              "name": "레퍼런스 게임 표 3행 이상",
+              "passed": true,
+              "evidence": "largest table has 5 data rows (2 tables)"
+            },
+            {
+              "name": "D+1 리텐션 언급",
+              "passed": false,
+              "evidence": "no match"
+            },
+            {
+              "name": "D+7 리텐션 언급",
+              "passed": false,
+              "evidence": "no match"
+            },
+            {
+              "name": "스테디셀러 분류",
+              "passed": false,
+              "evidence": "no match"
+            },
+            {
+              "name": "'배울 점' 섹션",
+              "passed": false,
+              "evidence": "no matching heading"
+            },
+            {
+              "name": "'차별화 기회' 섹션",
+              "passed": false,
+              "evidence": "no matching heading"
+            },
+            {
+              "name": "data.ai 확인 체크리스트",
+              "passed": false,
+              "evidence": "no match"
+            },
+            {
+              "name": "출처 링크",
+              "passed": true,
+              "evidence": "line 163: - [Games Like ZHED - Puzzle Game For Android - MoreAppsLike]…"
+            },
+            {
+              "name": "추정치임을 명시",
+              "passed": false,
+              "evidence": "not found"
+            }
+          ],
+          "passed": 2,
+          "total": 10
+        }
+      ],
+      "ungradedExpectations": []
+    },
+    {
+      "id": 2,
+      "prompt": "합성 게임이나 아이들 게임 쪽으로 기획 중인데 글로벌 시장에서 지금 잘 되고 있는 게임이 뭔지 알고 싶어. 레퍼런스 좀 찾아줘.",
+      "variants": [
+        {
+          "variant": "with_skill",
+          "source": "eval-2-idle-merge/with_skill/outputs",
+          "assertions": [
+            {
+              "name": "'추천 레퍼런스 게임' 섹션",
+              "passed": true,
+              "evidence": "line 155: ## 추천 레퍼런스 게임 요약 테이블"
+            },
+            {
+              "name": "레퍼런스 게임 표 3행 이상",
+              "passed": true,
+              "evidence": "largest table has 6 data rows (4 tables)"
+            },
+            {
+              "name": "D+1 리텐션 언급",
+              "passed": true,
+              "evidence": "line 64: - D+1: **~45~50%** (장르 평균 20~30% 대비 탁월)"
+            },
+            {
+              "name": "D+7 리텐션 언급",
+              "passed": true,
+              "evidence": "line 65: - D+7: **~18~20%** (장르 평균 8~12% 대비 우수)"
+            },
+            {
+              "name": "스테디셀러 분류",
+              "passed": true,
+              "evidence": "line 28: | Gossip Harbor | Microfun | Merge-2 + 스토리 | Top 20 이내 | ~$6…"
+            },
+            {
+              "name": "'배울 점' 섹션",
+              "passed": true,
+              "evidence": "line 69: #### 배울 점"
+            },
+            {
+              "name": "'차별화 기회' 섹션",
+              "passed": true,
+              "evidence": "line 74: #### 차별화 기회"
+            },
+            {
+              "name": "data.ai 확인 체크리스트",
+              "passed": true,
+              "evidence": "line 208: "
+            },
+            {
+              "name": "출처 링크",
+              "passed": true,
+              "evidence": "line 231: - [Gossip Harbor's Meteoric Rise in Merge — Naavik](https://…"
+            },
+            {
+              "name": "추정치임을 명시",
+              "passed": true,
+              "evidence": "line 26: | 게임명 | 개발사 | 세부 장르 | 미국 매출 추정 순위 | 연간 매출(글로벌) | 유형 |"
+            }
+          ],
+          "passed": 10,
+          "total": 10
+        },
+        {
+          "variant": "without_skill",
+          "source": "eval-2-idle-merge/without_skill/outputs",
+          "assertions": [
+            {
+              "name": "'추천 레퍼런스 게임' 섹션",
+              "passed": false,
+              "evidence": "no matching heading"
+            },
+            {
+              "name": "레퍼런스 게임 표 3행 이상",
+              "passed": true,
+              "evidence": "largest table has 6 data rows (1 tables)"
+            },
+            {
+              "name": "D+1 리텐션 언급",
+              "passed": false,
+              "evidence": "no match"
+            },
+            {
+              "name": "D+7 리텐션 언급",
+              "passed": false,
+              "evidence": "no match"
+            },
+            {
+              "name": "스테디셀러 분류",
+              "passed": false,
+              "evidence": "no match"
+            },
+            {
+              "name": "'배울 점' 섹션",
+              "passed": false,
+              "evidence": "no matching heading"
+            },
+            {
+              "name": "'차별화 기회' 섹션",
+              "passed": false,
+              "evidence": "no matching heading"
+            },
+            {
+              "name": "data.ai 확인 체크리스트",
+              "passed": false,
+              "evidence": "no match"
+            },
+            {
+              "name": "출처 링크",
+              "passed": true,
+              "evidence": "line 24: - **참고 링크**: [Gossip Harbor 성공 분석 (Udonis)](https://www.blog…"
+            },
+            {
+              "name": "추정치임을 명시",
+              "passed": false,
+              "evidence": "not found"
+            }
+          ],
+          "passed": 2,
+          "total": 10
+        }
+      ],
+      "ungradedExpectations": []
+    }
+  ],
+  "evalsWithoutAssertions": [],
+  "summary": {
+    "with_skill": {
+      "passed": 29,
+      "total": 30,
+      "passRate": 0.9666666666666667
+    },
+    "without_skill": {
+      "passed": 5,
+      "total": 30,
+      "passRate": 0.16666666666666666
+    }
+  }
+}
